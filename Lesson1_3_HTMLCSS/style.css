@@ -1,0 +1,25 @@
+*{
+    padding-top: 0;
+    padding-left: 0;
+}
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page__title{
+    margin-bottom: 15px;
+}
+
+.absolute {
+    background-color: aqua;
+    position: sticky;
+    padding: 2rem;
+    top: 0;
+    /* Cách căn giữa màn hình */
+   /* left: 50%;
+   transform: translateX(-50%); */
+ 
+}
