@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --f-size: 15px;
+    --p-816: 8px 16px;
+}
+
+body,
+html {
+    font-family: 'Jost', sans-serif;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--p-816);
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%),
+        0 2px 10px 0 rgb(0 0 0 / 12%);
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+#navbar .logo {
+    padding: var(--p-816);
+    font-size: var(--f-size);
+    letter-spacing: 4px;
+}
+
+#navbar .nav-items {
+    display: flex;
+    align-items: center;
+}
+
+#navbar .nav-items li {
+    letter-spacing: 4px;
+}
+
+#navbar .nav-items li a {
+    padding: var(--p-816);
+    color: #000;
+}
+
+#navbar .nav-items li a:visited {
+    color: #000;
+}
+
+#navbar .nav-items li a:hover {
+    background-color: #ccc;
+
+}
+
+#hero {
+    position: relative;
+}
+
+#hero img {
+    width: calc(100% - 20px);
+    /* max-width: 1500px; */
+    margin-inline: 10px;
+}
+
+#hero h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    font-size: 36px;
+    letter-spacing: 4px;
+}
+
+#hero h2 b {
+    background-color: #000;
+    padding: var(--p-816);
+    opacity: .75;
+}
+
+#projects {}
+
+#projects ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    padding-top: 32px;
+}
+
+#projects ul li {
+    width: calc(100% / 4 - 1rem);
+    position: relative;
+}
+
+#projects ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+#projects ul li .flag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    color: #FFF;
+    padding: .5rem 1rem;
+    text-transform: capitalize;
+    font-size: var(--f-size);
+}
+
+#about .about-desc {
+    margin-block: 15px;
+}
+
+#about ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+#about ul li {
+    width: calc(100% / 4 - 1rem);
+}
+
+#about ul li img {
+    width: 100%;
+}
+
+#about ul li .name {
+    font-size: 24px;
+    display: block;
+}
+
+#about ul li .position {
+    font-size: var(--f-size);
+    opacity: 0.6;
+    margin-block: 15px;
+    display: block;
+}
+
+#about ul li .bio {
+    margin-block: 15px;
+}
+
+#about ul li .contact {
+    background-color: #f1f1f1;
+    font-size: var(--f-size);
+    text-align: center;
+    border: none;
+    width: 100%;
+    padding: var(--p-816);
+    cursor: pointer;
+    transition: all .25s linear;
+}
+
+#about ul li .contact:hover {
+    background-color: #ccc;
+}
+
+#contact .contact-desc {
+    margin-block: 15px;
+}
+
+#contact .form-contact input {
+    width: 100%;
+    padding: 8px;
+    display: block;
+    font-size: var(--f-size);
+}
+
+#contact .form-contact input:not(:first-child) {
+    margin-block: 16px;
+    padding-block: 8px;
+}
+
+#contact .form-contact button {
+    padding: var(--p-816);
+    margin-block: 15px;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: var(--f-size);
+    transition: all .25s linear;
+    border: 1px solid #000;
+}
+
+#contact .form-contact button:hover {
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    color: #000;
+}
+
+#contact .map img {
+    width: 100%;
+}
+
+footer {
+    background-color: #000;
+    text-align: center;
+    padding-block: 16px;
+}
+
+#footer p,
+#footer a {
+    color: #FFF;
+    margin-block: 15px;
+    font-size: var(--f-size);
+}
+
+#footer a {
+    text-decoration: underline;
+}
+
+#footer a:hover {
+    color: greenyellow;
+}
+
+/* RESPONSIVE */
+/* TABLET */
+@media screen and (max-width: 992px) {
+    #projects .project li {
+        width: calc(100% / 2 - 1rem);
+    }
+
+    #about ul li {
+        width: calc(100% / 2 - 1rem);
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 600px) {
+    #projects .project li {
+            width: 100%;
+        }
+    
+        #about ul li {
+            width: 100%;
+        }
+}
+
+/* CUSTOM */
+.container {
+    padding-inline: 2rem;
+}
+
+.heading3 {
+    font-size: 24px;
+    padding-block: 16px;
+    margin-block: 10px;
+    font-weight: 300;
+    padding-top: 4rem;
+}
