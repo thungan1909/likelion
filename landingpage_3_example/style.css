@@ -5,6 +5,7 @@
     list-style: none;
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body,
@@ -23,6 +24,14 @@ ul {
 
 p {
     margin-block: 1rem;
+}
+
+hr {
+    border: 1px solid #EEE;
+}
+
+h4 {
+    margin-bottom: 0;
 }
 
 nav button {
@@ -61,4 +70,39 @@ header h1 {
 
 .blog .comment span {
     font-size: 15px;
+}
+
+aside .sidebar-items img {
+    width: 100%;
+}
+
+aside .sidebar-items ul.popular-posts li {
+    margin: auto;
+    padding: 1rem;
+}
+
+aside .sidebar-items ul li p {
+    margin: 0;
+}
+
+aside .sidebar-items .advertise-body {
+    height: 200px;
+}
+
+aside .sidebar-items .background-ads {
+    background-color: #eee;
+    width: 100%;
+}
+
+aside .sidebar-items .follow-me-body i {
+    font-size: 30px;
+}
+
+aside .sidebar-items .subscribe-body p {
+    margin-top: 0;
+}
+
+.subscribe-btn {
+    width: 100%;
+    margin-top: 1rem;
 }

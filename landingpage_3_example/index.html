@@ -24,7 +24,7 @@
 
 <body>
     <!-- NAV -->
-    <nav class="navbar bg-dark">
+    <nav class="navbar bg-dark d-none d-sm-flex">
         <ul class="d-flex gap-3">
             <li>
                 <button class="btn btn-outline-secondary">
@@ -87,15 +87,33 @@
         <img src="./asset/hero/hero.jpg" alt="hero-img" class="img-fluid">
         <div class="position-absolute hero-content">
             <h2 class="fw-normal">Jane's</h2>
-            <p class="text-uppercase fw-bold">fashion blog</p>
-            <button class="btn btn-secondary text-uppercase opacity-75">subscribe</button>
+            <p class="text-uppercase fw-bold d-none d-sm-block">fashion blog</p>
+            <button class="btn btn-secondary text-uppercase opacity-75" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">subscribe</button>
+        </div>
+    </div>
+
+    <!-- SUBSCRIBE MODAL -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">SUBSCRIBE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Enter your e-mail below and get notified on the latest blog posts.</p>
+                    <input type="text" class="form-control" placeholder="Enter e-mail" required>
+                    <button class="btn btn-danger subscribe-btn">Subscribe</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- BLOG -->
     <div class="container-fluid">
         <div class="row my-3">
-            <div class="col-9">
+            <div class="col-12 col-lg-8">
                 <div class="blog bg-light px-3 py-2 m-3">
                     <h3 class="text-center fw-normal">TITLE HEADING</h3>
                     <h5 class="text-center fw-normal my-2">Title description, <span class="opacity-75">May 2,
@@ -136,10 +154,10 @@
                     <hr class="my-5">
 
                     <div class="row comment">
-                        <div class="col-2">
+                        <div class="col-12 col-sm-2">
                             <img src="./asset/blog/comment1.jpg" alt="cmt-1" class="img-fluid">
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-10">
                             <h4>George <span class="text-secondary">May 3, 2015, 6:32 PM</span></h4>
                             <p>Great blog post! Following</p>
                         </div>
@@ -185,10 +203,10 @@
                     <hr class="my-5">
 
                     <div class="row comment">
-                        <div class="col-2">
+                        <div class="col-12 col-sm-2">
                             <img src="./asset/blog/comment1.jpg" alt="cmt-1" class="img-fluid">
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-10">
                             <h4>George <span class="text-secondary">May 3, 2015, 6:32 PM</span></h4>
                             <p>Great blog post! Following</p>
                         </div>
@@ -234,20 +252,191 @@
                     <hr class="my-5">
 
                     <div class="row comment">
-                        <div class="col-2">
+                        <div class="col-12 col-sm-2">
                             <img src="./asset/blog/comment1.jpg" alt="cmt-1" class="img-fluid">
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-10">
                             <h4>George <span class="text-secondary">May 3, 2015, 6:32 PM</span></h4>
                             <p>Great blog post! Following</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-3"></div>
+            <div class="col-12 col-lg-4">
+                <aside class="m-3">
+                    <!-- My name -->
+                    <div class="sidebar-items">
+                        <img src="./asset/blog/blog2.jpg" alt="blog-2" class="img-fluid">
+                        <div class="text bg-dark px-3">
+                            <h4 class="text-light py-2 mb-0">My Name</h4>
+                            <p class="text-light py-2 my-0">Just me, myself and I, exploring the universe of uknownment.
+                                I have a heart of love and a
+                                interest of lorem ipsum and
+                                mauris neque quam blog. I want to share my world with you.</p>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+
+                    <!-- Popular posts -->
+                    <div class="sidebar-items">
+                        <h4 class="bg-dark p-3 text-light mb-0">Popular Posts</h4>
+                        <ul class="bg-light popular-posts">
+                            <li class="row border-bottom">
+                                <div class="col-3"><img src="./asset/blog/popular1.jpg" alt="popular-1"></div>
+                                <div class="col-6">
+                                    <h5>Denim</h5>
+                                    <p>Sed mattis nunc</p>
+                                </div>
+                            </li>
+                            <li class="row border-bottom">
+                                <div class="col-3"><img src="./asset/blog/popular1.jpg" alt="popular-1"></div>
+                                <div class="col-6">
+                                    <h5>Denim</h5>
+                                    <p>Sed mattis nunc</p>
+                                </div>
+                            </li>
+                            <li class="row border-bottom">
+                                <div class="col-3"><img src="./asset/blog/popular1.jpg" alt="popular-1"></div>
+                                <div class="col-6">
+                                    <h5>Denim</h5>
+                                    <p>Sed mattis nunc</p>
+                                </div>
+                            </li>
+                            <li class="row border-bottom">
+                                <div class="col-3"><img src="./asset/blog/popular1.jpg" alt="popular-1"></div>
+                                <div class="col-6">
+                                    <h5>Denim</h5>
+                                    <p>Sed mattis nunc</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <!-- Advertise -->
+                    <div class="sidebar-items">
+                        <h4 class="bg-dark p-3 text-light">Advertise</h4>
+                        <div class="advertise-body bg-white d-flex p-3">
+                            <h4 class="background-ads d-flex align-items-center justify-content-center">
+                                Your AD Here
+                            </h4>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Tags -->
+                    <div class="sidebar-items">
+                        <h4 class="bg-dark p-3 text-light">Tags</h4>
+                        <div class="tag-body bg-white p-3">
+                            <span class="d-inline-block p-2 bg-dark text-light mb-3">Fashion</span>
+                            <span class="d-inline-block p-2 mb-3">New York</span>
+                            <span class="d-inline-block p-2 mb-3">Lon Don</span>
+                            <span class="d-inline-block p-2 mb-3">HCMC</span>
+                            <span class="d-inline-block p-2 mb-3">New York</span>
+                            <span class="d-inline-block p-2 mb-3">New York</span>
+                            <span class="d-inline-block p-2 mb-3">New York</span>
+                            <span class="d-inline-block p-2 mb-3">New York</span>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Inspiration -->
+                    <div class="sidebar-items">
+                        <h4 class="bg-dark p-3 text-light">Inspiration</h4>
+                        <div class="inspiration-body bg-white container-fluid py-3">
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <img src="./asset/blog/inspi1.jpg" alt="inspiration-img">
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <img src="./asset/blog/inspi1.jpg" alt="inspiration-img">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="./asset/blog/inspi1.jpg" alt="inspiration-img">
+                                </div>
+                                <div class="col-6">
+                                    <img src="./asset/blog/inspi1.jpg" alt="inspiration-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Follow me -->
+                    <div class="sidebar-items">
+                        <h4 class="bg-dark p-3 text-light">Follow Me</h4>
+                        <div class="follow-me-body bg-white">
+                            <ul class="d-flex gap-3 p-3">
+                                <li>
+                                    <a href="">
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-brands fa-square-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-brands fa-square-snapchat"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-brands fa-discord"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-brands fa-square-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <!-- Subscribe -->
+                    <div class="sidebar-items">
+                        <h4 class="bg-dark p-3 text-light">Subscribe</h4>
+                        <div class="subscribe-body bg-white p-3">
+                            <p>Enter your e-mail below and get notified on the latest blog posts.</p>
+                            <input type="text" class="form-control" placeholder="Enter e-mail" required>
+                            <button class="btn btn-danger subscribe-btn">Subscribe</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-secondary p-5">
+        <button class="btn btn-dark">
+            <a href="#" class="text-light text-decoration-none">
+                <i class="fa-solid fa-arrow-up"></i>
+                To the top
+            </a>
+        </button>
+        <p class="m-0 pt-5">Powered by <a href="">w3.css</a></p>
+    </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 <script src="./script.js"></script>
 
 </html>
