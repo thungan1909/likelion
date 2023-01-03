@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#timer {
+    min-height: 100vh;
+    min-width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #FC5C7D;
+    background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);
+    background: linear-gradient(to right, #6A82FB, #FC5C7D);
+}
+
+#timer .timer-container {
+    padding: 3rem;
+    border-radius: 20px;
+    background-color: #eee;
+    box-shadow: 10px 5px 30px #000;
+}
+
+#timer .timer-display {
+    font-size: 4rem;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+}
+
+#timer .timer-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    gap: 3rem;
+}
+
+#timer .timer-action button {
+    border: none;
+    font-size: 2rem;
+    color: #eee;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    display: flex;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+
+#timer .timer-action button:hover {
+    transform: scale(1.05);
+    opacity: .9;
+    box-shadow: 3px 3px 7px #000;
+}
+
+#timer .timer-action button#play,
+#timer .timer-action button#pause {
+    background-color: #787FF0;
+}
+
+#timer .timer-action button#stop {
+    background-color: #FB5C7E;
+}
