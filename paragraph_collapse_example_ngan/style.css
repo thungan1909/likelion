@@ -6,7 +6,7 @@
     list-style: none;
 }
 
-.title-icon{
+.heading-icon{
     background-color:  #ffd43b;
     width: fit-content;
     height: fit-content;
@@ -16,7 +16,10 @@
 
 .question{
     background-color:  #ffd43b;
-    padding: 4px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+
 }
 
 .answer{
