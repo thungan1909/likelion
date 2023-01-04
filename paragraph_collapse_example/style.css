@@ -1,0 +1,32 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.title-icon{
+    background-color:  #ffd43b;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.question{
+    background-color:  #ffd43b;
+    padding: 4px;
+}
+
+.answer{
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.25s;
+}
+.answer.active {
+    height: 100%;
+    opacity: 1;
+    transition: 0.5s;
+}
