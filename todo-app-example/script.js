@@ -4,7 +4,7 @@ const $$ = document.querySelector.bind(document);
 const taskField = $$(".input-field");
 const addTaskBtn = $$(".addTask");
 const taskList = $$(".task-list");
-let completeBtn;
+
 
 
 
@@ -14,26 +14,27 @@ let count = 0;
 // const myTaskListNode = [taskList];
 
 let removeBtn, containerBtn;
-
+let completeBtn;
+completeBtn = document.createElement("button");
 
 addTaskBtn.addEventListener("click", AddTask)
 
 
-function updateTimer() {
+// function updateTimer() {
     
-    // count++;
-    console.log(taskList.length);
-    for (let i = 0; i < taskList.length; i++)
-    {
+//     // count++;
+//     console.log(taskList.length);
+//     for (let i = 0; i < taskList.length; i++)
+//     {
         
-        // console.log(taskList[i]);
-        // console.log(completeBtn[i]);
-        // completeBtn[i].addEventListener("click", () => {
-        //     taskList.remove(taskList[i]);
-        // });
-    }
+//         // console.log(taskList[i]);
+//         // console.log(completeBtn[i]);
+//         // completeBtn[i].addEventListener("click", () => {
+//         //     taskList.remove(taskList[i]);
+//         // });
+//     }
    
-}
+// }
 
 function AddTask (e) {
     li = document.createElement("li");
@@ -43,9 +44,10 @@ function AddTask (e) {
     {
         p.innerText = task;
         // Button
-        completeBtn = document.createElement("button");
+       
         removeBtn = document.createElement("button");
         containerBtn = document.createElement("div");
+        console.log(completeBtn);
         completeBtn.innerHTML = `<i class="fa-regular fa-circle-check completeBtn"></i>`;
         completeBtn.classList.add("complete");
         removeBtn.innerHTML = `<i class="fa-solid fa-circle-xmark removeBtn"></i>`
@@ -56,7 +58,7 @@ function AddTask (e) {
         li.appendChild(containerBtn);
         taskList.appendChild(li);
         e.preventDefault(); 
-        updateTimer();
+       
     }
 }
 
