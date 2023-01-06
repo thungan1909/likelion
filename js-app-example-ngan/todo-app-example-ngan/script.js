@@ -8,17 +8,24 @@ var tasks = [];
 let TaskArrayLC = [];
 let li;
 let completeBtn, removeBtn, containerBtn;
+ completeBtn = document.createElement("button");
+    removeBtn = document.createElement("button");
+    containerBtn = document.createElement("div");
+
 addTaskBtn.addEventListener("click", AddTask);
-window.onload = function () {
+window.onload = function (e) {
     const myTasks = getAllFromLC();
+  
+    
 }
 
-function CreateTaskElement (TaskValue) {
  
+function CreateTaskElement (TaskValue) {
     tasks.push({
         task: TaskValue,
         isComplete: false,
     })
+    saveLC(tasks);
     li = document.createElement("li");
     const p = document.createElement("p");
     if (TaskValue.toString().length  > 0)
@@ -29,11 +36,10 @@ function CreateTaskElement (TaskValue) {
     li.appendChild(p);
     CreateButton();  
     taskList.appendChild(li);
-    saveLC(tasks); 
-   
+
+     
 }
 function CreateButton () {
-
     completeBtn = document.createElement("button");
     removeBtn = document.createElement("button");
     containerBtn = document.createElement("div");
@@ -47,39 +53,20 @@ function CreateButton () {
 }
 //Handle AddTask
 function AddTask (e) {
-    
     let task = taskField.value;
     CreateTaskElement(task);
- 
-    
     e.preventDefault(); 
-    completeBtn.onclick = function (e) {
-            
-        const taskElement = this.parentElement.parentElement.childNodes[0];
-        completeTask(taskElement);
-        e.preventDefault(); 
-    
-    }
+   
     removeBtn.onclick = function (e) {
-          
+      
         const taskElement = this.parentElement.parentElement;
         removeTask(taskElement);
         e.preventDefault(); 
-    }     
+    } 
 }
 
 function completeTask (taskElement) {
     taskElement.style.textDecoration = "line-through";
-    // let task = taskField.value;
-    // CreateTaskElement(task);
-    // const objectWeNeed = objectsArr.filter((object) => {
-    //     return object.age === 21;
-    //   });
-    // tasks.push({
-    //     task: task,
-    //     isComplete: false,
-    // })
-
 }
 function removeTask(taskElement) {
     taskElement.remove();   
@@ -92,10 +79,30 @@ function saveLC(tasks) {
 function getAllFromLC() {
     const str = localStorage.getItem("task");
     TaskArrayLC = JSON.parse(str);
-    console.log(TaskArrayLC);
-    for(let i =0; i< TaskArrayLC.length; i++){
+     for(let i =0; i< TaskArrayLC.length; i++){
+     
+   
         CreateTaskElement(TaskArrayLC[i].task);
     }
+
+    // console.log(completeBtn);
+    completeBtn.addEventListener("click", function(e) {
+        e.preventDefault(); 
+        console.log(completeBtn);
+    })
+    //  completeBtn.onclick = function (e) {
+    //     e.preventDefault(); 
+    //     const taskElement =this.parentElement.parentElement.childNodes[0] ;
+    //     console.log(taskElement);
+    //     // completeTask(taskElement);
+       
+    
+    // }
+
+    // completeBtn.addEventListener("click", function (e) {
+    //     e.preventDefault(); 
+    //     console.log("ds");
+    // });
 }
 function removeLC(taskElement) {
     localStorage.removeItem("tasks");
