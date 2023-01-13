@@ -7,24 +7,40 @@
 //         reject("Nope");
 //     }
 
+
+
 // })
 // promise.then(
 //     function(value) {console.log(value)},
 //     function(err) {console.log(err)}
 // )
 
-let users =[];
+const $ = document.querySelector.bind(document);
+
+const table = $("table");
+
+
 fetch("https://jsonplaceholder.typicode.com/users")
 .then(res => res.json())
-.then(user => users.push(user));
+.then((user) => ShowData(user))
+// .catch(err => console.log(err))
+let tableBody;
 
-
-
-// const newUser = `<`
-// const table = document.querySelector("table");
-// table.append
-
-
-
-
-
+//for each tra ve tung phan tu
+//map tra ve mang
+function ShowData(datas) {
+    datas.map((data) => {
+        tableBody = `
+        <td>${data.id}</td>
+        <td>${data.name}</td>
+        <td>${data.username}</td>
+        <td>${data.email}</td>
+        <td>${data.address.street}, ${data.address.suite}, ${data.address.city}</td>
+        <td>${data.address.zipcode}</td>
+        <td>${data.phone}</td>
+        `
+      
+        table.innerHTML += tableBody;
+        
+    })
+}
