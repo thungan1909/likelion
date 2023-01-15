@@ -39,7 +39,6 @@ function ShowData(datas) {
         <td>${data.address.zipcode}</td>
         <td>${data.phone}</td>
         `
-      
         table.innerHTML += tableBody;
         
     })

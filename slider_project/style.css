@@ -5,15 +5,25 @@
   list-style: none;
   text-decoration: none;
 }
-
-.prev {
+.slider{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.img-prev {
+.slider-now{
+  width: 300px;
+  height: 300px;
+}
+.preview-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-prev{
   width: 100px;
   height: 100px;
   margin: 16px;
