@@ -8,7 +8,7 @@ const imgPreview = $$(".img-prev");
 
 let curImgIndex = 0 ;
 const updateImg = img => {
-    return img.getCurretAttribute("src");
+    return img.getAttribute("src");
 }
 const showSliderImg = img => {
     sliderNow.setAttribute("src", img);
@@ -16,10 +16,15 @@ const showSliderImg = img => {
 
 imgPreview .forEach(element => {
     element.addEventListener("click", () => {
-       
+        
         showSliderImg(element.src);
     })
 });
 
 
 
+
+window.onload = (event) => {
+    // updateImg(imgPreview[0]);
+    showSliderImg(imgPreview[0].src);
+  };
