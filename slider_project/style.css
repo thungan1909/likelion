@@ -15,6 +15,7 @@
 .slider-now{
   width: 300px;
   height: 300px;
+  margin: 16px;
 }
 .preview-wrapper{
   display: flex;
@@ -27,4 +28,8 @@
   width: 100px;
   height: 100px;
   margin: 16px;
+}
+
+.Btn {
+  padding: 8px;
 }
