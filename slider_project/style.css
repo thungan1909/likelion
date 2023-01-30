@@ -5,6 +5,12 @@
   list-style: none;
   text-decoration: none;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .slider{
   display: flex;
   flex-direction: row;
@@ -13,8 +19,8 @@
 }
 
 .slider-now{
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 400px;
   margin: 16px;
 }
 .preview-wrapper{
