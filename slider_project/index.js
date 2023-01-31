@@ -1,11 +1,12 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const sliderNow = $(".slider-now");
+let sliderNow = $(".slider-now");
 const prevBtn = $(".prevBtn");
 const nextBtn = $(".nextBtn");
 const checkbox = $(".autoChBox");
 const imgPreview = $$(".img-prev");
+const slider = $(".slider");
 const imgPreviewArr = Array.from(imgPreview);
 let curImgIndex = 0 ;
 let len = imgPreviewArr.length;
@@ -15,8 +16,21 @@ let idInterval = 0;
 const updateImg = img => {
     return img.getAttribute("src");
 }
+const animation = () => {
+  
+    sliderNow.classList.remove("animation");
+    sliderNow.classList.add("animation");
+
+}
 const showSliderImg = img => {
+   
+    sliderNow.remove();
+    sliderNow = document.createElement("img")
+    sliderNow.classList.add("slider-now");
+    animation();
     sliderNow.setAttribute("src", img);
+    slider.appendChild(sliderNow)
+
 }
 const nextPic = () => {
     if (curImgIndex < len -1) {
@@ -63,6 +77,7 @@ prevBtn.addEventListener("click", () => {
 checkbox.addEventListener('change', function() {
     if (this.checked) {
       console.log("Checkbox is checked..");
+      
       idInterval = setInterval(nextPic,2000);
       
       
