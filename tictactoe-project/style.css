@@ -1,0 +1,27 @@
+.container{
+    background-color: #fff;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 0;
+    margin-bottom: 8px;
+  
+}
+.container li {
+    border: 2px solid black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    width: calc( 500px / 3 );
+    height: calc( 500px / 3 );
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
