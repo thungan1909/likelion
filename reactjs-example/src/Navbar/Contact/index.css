@@ -1,0 +1,9 @@
+.contact__Btn{
+    padding: 8px;
+    color: #000;
+    background-color: #deff96;
+    margin-right: 8px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+}
