@@ -1,0 +1,18 @@
+#header{
+    display: flex;
+    flex-direction: row;
+}
+
+
+#hero{
+    background: #333 url('./assets/vietnam.png')
+    no-repeat center center/cover ;
+    height: 50vh;
+    color: #fff;
+}
+
+#hero .hero-content{
+    top: 50%;
+    left: 3rem;
+    transform: translateY(-50%);
+}
