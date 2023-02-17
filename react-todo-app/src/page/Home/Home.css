@@ -1,0 +1,59 @@
+ul {
+    padding: 0;
+    margin: 0;
+}
+.page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.table{
+    display: flex;
+    width: 80%;
+    height: fit-content;
+    
+    justify-content: space-between;
+    margin-inline: 24px;
+    padding-inline: 16px;
+    
+}
+.create-task__Btn{
+    width: 140px;
+    height: 35px;
+    margin: 8px;
+}
+.table__section{
+    background-color: #f4f5f7;
+    width: 270px;
+    min-height: 500px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+.table__title{
+    border-bottom:  1px solid #000;
+    text-align: center;
+    background-color: #1e0059;
+    color: #FFF;
+    padding: 4px;
+}
+
+.table__card{
+  
+  
+    width: calc(100%-8px);
+    min-height: 80px;
+    margin: 8px 4px;
+    background-color: #FFF;
+    border-radius: 8px;
+    list-style: none;
+    padding: 8px;
+}
+
+.card__name{
+    width: 100%;
+    font-weight: 500;
+}
