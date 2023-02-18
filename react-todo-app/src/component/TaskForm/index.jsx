@@ -5,8 +5,6 @@ export default function TaskForm ({stateOpen, setStateOpen, setTasks})
     
  
     const [isOpen, setIsOpen] = useState(stateOpen);
-
-  
     const [newTask, setNewTask] = useState();
     const [newTaskName, setNewTaskName] = useState("");
     const [newTaskDesc, setNewTaskDesc] = useState("");
@@ -18,9 +16,13 @@ export default function TaskForm ({stateOpen, setStateOpen, setTasks})
   
     useEffect (() => {
             if (newTask === undefined) return;
-           setTasks(
-            prevState => [...prevState, newTask]);
+           else{
+            setTasks(
+                prevState => [...prevState, newTask]);
+           }
+           
     }, [newTask])
+   
     const handleCancel = () => {
         setIsOpen(false);
         setStateOpen(false);
@@ -28,11 +30,11 @@ export default function TaskForm ({stateOpen, setStateOpen, setTasks})
     const handleSaveTask = () => {
 
         setNewTask({
+            id:  Math.random().toString(36).substring(2,9),
             name: newTaskName,
-            desc: newTaskDesc
+            desc: newTaskDesc,
+            status: 1
         });
-        
-       
         setIsOpen(false);
         setStateOpen(false);
     }
