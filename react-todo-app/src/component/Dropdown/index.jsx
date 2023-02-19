@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -8,16 +8,31 @@ const taskStatus = [
   { label: "Done", value: 3 },
 ];
 
-const DropDown = () => (
-  <div className="container">
+export default function DropDown ({status, setStatus}) {
+  
+ const [newStatus, setNewStatus] = useState(status);
+
+  useEffect (() => {
+    setStatus(newStatus);
+   
+    // console.log(newStatus);
+  }, [newStatus])
+  const handleUpdateTaskStatus = (e) => {
+      setNewStatus(e);
+     
+  }
+  return (
+    <div className="container">
     <div className="row">
       <div className="col-md-7"></div>
       <div className="col-md-7">
-        <Select options={ taskStatus } placeholder="To do" isSearchable = {false}/>
+        <Select options={ taskStatus } placeholder="To do" isSearchable = {false}
+        onChange={e => handleUpdateTaskStatus(e)}
+        />
       </div>
       <div className="col-md-7"></div>
     </div>
   </div>
-);
+  )
+} ;
 
-export default DropDown;

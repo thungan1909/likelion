@@ -1,6 +1,6 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
 import { useEffect, useState } from "react"
-export default function TaskForm ({stateOpen, setStateOpen, setTasks}) 
+export default function TaskForm ({stateOpen, setStateOpen, setTodoTasks}) 
 {
     
  
@@ -17,7 +17,7 @@ export default function TaskForm ({stateOpen, setStateOpen, setTasks})
     useEffect (() => {
             if (newTask === undefined) return;
            else{
-            setTasks(
+            setTodoTasks(
                 prevState => [...prevState, newTask]);
            }
            
@@ -33,7 +33,7 @@ export default function TaskForm ({stateOpen, setStateOpen, setTasks})
             id:  Math.random().toString(36).substring(2,9),
             name: newTaskName,
             desc: newTaskDesc,
-            status: 1
+            status:  { label: "To do", value: 1 },
         });
         setIsOpen(false);
         setStateOpen(false);
