@@ -8,12 +8,12 @@ const taskStatus = [
   { label: "Done", value: 3 },
 ];
 
-export default function DropDown ({status, setStatus}) {
+export default function DropDown ({status, setUpdatedStatus}) {
   
  const [newStatus, setNewStatus] = useState(status);
 
   useEffect (() => {
-    setStatus(newStatus);
+    setUpdatedStatus(newStatus);
    
     // console.log(newStatus);
   }, [newStatus])
@@ -26,7 +26,7 @@ export default function DropDown ({status, setStatus}) {
     <div className="row">
       <div className="col-md-7"></div>
       <div className="col-md-7">
-        <Select options={ taskStatus } placeholder="To do" isSearchable = {false}
+        <Select options={ taskStatus } value = {status.value} isSearchable = {false}
         onChange={e => handleUpdateTaskStatus(e)}
         />
       </div>

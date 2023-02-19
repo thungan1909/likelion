@@ -8,13 +8,11 @@ import './Home.css'
 export default function Home () {
     const [isAddTask, setIsAskTask] = useState(false);
 
-    // try to load `boards` from the local storage, if null set empty array to the var
+    // try to load `tasks` from the local storage, if null set empty array to the var
      const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     const [tasks, setTasks] = useState(storedTasks);
-    const [status, setStatus] = useState();
+    const [updatedStatus, setUpdatedStatus] = useState();
     const myTaskID = useRef();
-   // const [isChangeStatus, setIsChangeStatus] = useState(false);
-
  
     function handleCreateTask () 
     {   
@@ -22,78 +20,47 @@ export default function Home () {
       
     }
     useEffect(() => {
+        console.log(tasks);
         const json = JSON.stringify(tasks);
         localStorage.setItem("tasks", json);
       }, [tasks]);
 
     useEffect (() => {
-        // console.log("Changed");
      
-        // console.log(status);
-     
-         handleChangeStatus(myTaskID, status);
-    }, [status])
+         handleChangeStatus(myTaskID, updatedStatus);
+    }, [updatedStatus])
 
 
-    const handleChangeStatus  = (myTaskID, status) => {
-       
-        //  newTasks[myTaskID].name = 'New Name';
-        // newUsers[index].rollNo = 'New RollNo';
-        // setUsers(newUsers);
-       
-        // const updatedTasks = tasks.map((item) => {
-        //     if (item.id === myTaskID.current)
-        //      {
-        //       return {
-        //         id: item.id,
-        //         name: item.name,
-        //         desc: item.desc,
-        //         status: status,
-        //       };
-        //     }
-        //     else {
-        //       return tasks; 
-        //     }
-   
-        //   })
-        // //  console.log(updatedTasks);
-        // //setTasks(updatedTasks);
-        // console.log(tasks);
-              // return {
-              //   id: item.id,
-              //   status: status,
-                
-              //   // text: event.target.note.value,
-              // };
-            // } else {
-            //   return item;
-            // }
-          // });
-       //   console.log(updatedTasks);
-         // setTasks(updatedTasks);
-          //setNoteEditing("");
+    const handleChangeStatus  = (myTaskID, updatedStatus) => {
+    
+        const updatedTasks = tasks.map((item) => {
+            if (item.id === myTaskID.current)
+             {
+              return {
+                id: item.id,
+                name: item.name,
+                desc: item.desc,
+                status: updatedStatus,
+              };
+             
+            }
+            else {
+              return item; 
+            }
+          })
+         setTasks(updatedTasks);
+
     }
 
-    // console.log(isChangeStatus);
-    // const handleChangeCard = () => {
-    //     console.log("sc");
-    // }
-
-    // const handleClick = (id) => {
-    //     // task.current = id;
-    //     console.log(id);
-       
-    // }
     const handleChangeID = (index) => {
-        
-       // console.log(index);
+
         myTaskID.current = index;
-       // console.log(myTaskID);
+   
       };
     
     return(
         <div className="page">
-            <TaskForm stateOpen={isAddTask} setStateOpen={setIsAskTask}  setTodoTasks={setTasks}></TaskForm>
+            <TaskForm stateOpen={isAddTask} setStateOpen={setIsAskTask}  setTasks={setTasks}></TaskForm>
             <button className="create-task__Btn" onClick={handleCreateTask}>Create Task</button>
             <h1>My list task</h1>
           
@@ -106,22 +73,20 @@ export default function Home () {
 
                     <div className="table__body">
                              <ul>
-                                {tasks.map((item, index) =>  
+                                {tasks.map((item) =>  
                                 {
-                                  // if (item === undefined) {
-                                  //   return <div>Khoong</div>
-                                  // }
-
-                                //  if (item.status.value === 1)
-                                  
+                                 if (item.status.value === 1)
+                                  {
                                     return (
-                                             <li   onClick={() => {handleChangeID(item.id); }}
-                                                className="table__card" key= {item.id} >
-                                               <span className="card__name">{item.name}</span>
-                                                <p className="card__desc">{item.desc}</p>
-                                                <DropDown  status={item.status} setStatus = {setStatus}></DropDown>
-                                        </li>
-                                    )
+                                        <li   onClick={() => {handleChangeID(item.id); }}
+                                           className="table__card" key= {item.id} >
+                                          <span className="card__name">{item.name}</span>
+                                           <p className="card__desc">{item.desc}</p>
+                                           <DropDown  status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
+                                   </li>
+                               )
+                                  }
+                                 
                                   
                                 }
                                  
@@ -136,7 +101,27 @@ export default function Home () {
                             DOING
                     </div>
                         <div className="table__body">
-
+                        <ul>
+                                {tasks.map((item) =>  
+                                {
+                                 if (item.status.value === 2)
+                                  {
+                                    return (
+                                        <li   onClick={() => {handleChangeID(item.id); }}
+                                           className="table__card" key= {item.id} >
+                                          <span className="card__name">{item.name}</span>
+                                           <p className="card__desc">{item.desc}</p>
+                                           <DropDown  status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
+                                   </li>
+                               )
+                                  }
+                                 
+                                  
+                                }
+                                 
+                                )}
+                                
+                            </ul>
                         </div>
                 </div>
                 <div className="table__section table__done">
@@ -144,7 +129,27 @@ export default function Home () {
                             DONE
                     </div>
                     <div className="table__body">
-
+                    <ul>
+                                {tasks.map((item) =>  
+                                {
+                                 if (item.status.value === 3)
+                                  {
+                                    return (
+                                        <li   onClick={() => {handleChangeID(item.id); }}
+                                           className="table__card" key= {item.id} >
+                                          <span className="card__name">{item.name}</span>
+                                           <p className="card__desc">{item.desc}</p>
+                                           <DropDown  status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
+                                   </li>
+                               )
+                                  }
+                                 
+                                  
+                                }
+                                 
+                                )}
+                                
+                            </ul>
                     </div>
                 </div>
            </div>
