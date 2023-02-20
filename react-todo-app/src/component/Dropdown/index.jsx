@@ -13,14 +13,15 @@ export default function DropDown ({setTaskID, taskID, status, setUpdatedStatus})
 
  const [newStatus, setNewStatus] = useState(status);
 
+ //function to set task ID and set state updatedStatus when status is changed
   useEffect (() => {
     setUpdatedStatus(newStatus);
     setTaskID(taskID);
-
   }, [newStatus])
+  
+  //function to update status with new value
   const handleUpdateTaskStatus = (e) => {
       setNewStatus(e);
-     
   }
   return (
     <div className="container">

@@ -11,25 +11,27 @@ export default function TaskForm ({stateOpen, setStateOpen, setTasks})
     const [newTaskDesc, setNewTaskDesc] = useState("");
     
 
+    //function to update state to open 
     useEffect (() => {
         setIsOpen(stateOpen);
     }, [stateOpen])
   
+    //function to add new task to tasks list, 
     useEffect (() => {
             if (newTask === undefined) return;
-           else{
+           else {
             setTasks(
                 prevState => [...prevState, newTask]);
            }
            
     }, [newTask])
-   
+    //function to cancel when click cancel button
     const handleCancel = () => {
         setIsOpen(false);
         setStateOpen(false);
     }
+     //function to save task when click save btn
     const handleSaveTask = () => {
-
         setNewTask({
             id:  Math.random().toString(36).substring(2,9),
             name: newTaskName,

@@ -11,15 +11,19 @@ export default function AlertDelete ({isOpenDeleteAlert, setIsOpenDeleteAlert, s
 {
     const [isOpen, setIsOpen] = useState(isOpenDeleteAlert);
  
+    //to set open alert
     useEffect (() => {
         setIsOpen(isOpenDeleteAlert);
     }, [isOpenDeleteAlert])
+
+      //function to set deleteConfirm state  when click Delete btn
     const handleDeleteConfirm = () => {
        
         setIsConfirmDelete(true);
         setIsOpen(false);
         setIsOpenDeleteAlert(false);
     }
+        //function to cancel when click cancel button
     const handleCancelConfirm = () => {
         setIsOpen(false);
         setIsOpenDeleteAlert(false);
@@ -27,7 +31,6 @@ export default function AlertDelete ({isOpenDeleteAlert, setIsOpenDeleteAlert, s
     return (
         <Dialog
             open={isOpen}
-            // onClose={handleClose}
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >

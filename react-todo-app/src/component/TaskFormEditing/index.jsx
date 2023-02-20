@@ -7,7 +7,9 @@ export default function TaskFormEditing ({isEditTask, setIsEditTask, tasks , set
     const [taskEditing, setTaskEditing] = useState("");
     const [newTaskName, setNewTaskName] = useState("");
     const [newTaskDesc, setNewTaskDesc] = useState("");
-    const [newTask, setNewTask] = useState();
+   
+
+    //when change state isEditTask => set state to open and find the task will be edit by ID
     useEffect (() => {
         setIsOpen(isEditTask);
         tasks.map((item) => {
@@ -18,6 +20,7 @@ export default function TaskFormEditing ({isEditTask, setIsEditTask, tasks , set
           });
     }, [isEditTask]);
 
+    //function to update task with new name and description
     function handleEditTask () 
     {
         const updatedTasks = tasks.map((item) => {
@@ -38,11 +41,13 @@ export default function TaskFormEditing ({isEditTask, setIsEditTask, tasks , set
          setTasks(updatedTasks);
 
     }
+    //function to save task when click save btn
     const handleSaveTask = () => {
         handleEditTask();
         setIsOpen(false);
         setIsEditTask(false);
     }
+    //function to cancel when click cancel button
     const handleCancel = () => {
         setIsOpen(false);
         setIsEditTask(false);
