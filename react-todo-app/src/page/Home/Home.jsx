@@ -3,6 +3,7 @@ import { useState } from "react"
 import TaskForm from "../../component/TaskForm"
 import { Button } from "react-bootstrap-v5";
 import DropDown from "../../component/Dropdown";
+import AlertDelete from "../../component/AlertDelete";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPencil, faL } from "@fortawesome/free-solid-svg-icons";
 
@@ -16,14 +17,20 @@ export default function Home () {
     const [tasks, setTasks] = useState(storedTasks);
     const [updatedStatus, setUpdatedStatus] = useState();
     const [taskID, setTaskID] = useState();
-    const myTaskID = useRef();
- 
+    const [isOpenDeleteAlert, setIsOpenDeleteAlert] = useState(false); 
+    const [isConfirmDelete, setIsConfirmDelete] = useState(false);
     function handleCreateTask () 
     {   
          
           setIsAskTask(true);
       
     }
+ 
+    function handleDeleteAlert (id) {
+  
+      setTaskID(id);
+      setIsOpenDeleteAlert(true);
+  };
  
     useEffect(() => {
         //console.log(tasks);
@@ -35,6 +42,21 @@ export default function Home () {
         
          handleChangeStatus(taskID, updatedStatus);
     }, [updatedStatus])
+
+    useEffect (() => {
+       if (isConfirmDelete) 
+       {
+        handleDeleteTask(taskID);
+       }
+    }, [isConfirmDelete])
+  
+    const handleDeleteTask = (taskID) => 
+    {
+      const filteredTasks = tasks.filter((item) => item.id !==  taskID);
+      setTasks(filteredTasks);
+      setIsConfirmDelete(false);
+    }
+
 
     const handleChangeStatus  = (taskID, updatedStatus) => {
     
@@ -57,19 +79,11 @@ export default function Home () {
 
     }
 
-    const handleChangeID = (index) => {
-        myTaskID.current = index;
 
-      };      
-    const handleDeleteTask = (index) => {
-        handleChangeID(index);
-        const filteredTasks = tasks.filter((item) => item.id !== myTaskID.current);
-        setTasks(filteredTasks);
-    };
-   
     return(
         <div className="page">
             <TaskForm stateOpen={isAddTask} setStateOpen={setIsAskTask}  setTasks={setTasks}></TaskForm>
+            <AlertDelete isOpenDeleteAlert = {isOpenDeleteAlert} setIsOpenDeleteAlert = {setIsOpenDeleteAlert} setIsConfirmDelete = {setIsConfirmDelete} ></AlertDelete> 
             <button className="create-task__Btn" onClick={handleCreateTask}>Create Task</button>
             <h1>My list task</h1>
 
@@ -92,7 +106,8 @@ export default function Home () {
                                            <p className="card__desc">{item.desc}</p>
                                            <div className="card__action">
                                                 <DropDown setTaskID = {setTaskID} taskID ={item.id} status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
-                                                <button className="card__Btn" onClick={() => handleDeleteTask(item.id)} >
+ 
+                                                <button className="card__Btn" onClick={( )=> {handleDeleteAlert(item.id);}} >
                                                   <FontAwesomeIcon  icon={faTrash} color ="red"/></button>
                                                 <button className="card__Btn"><FontAwesomeIcon  icon={faPencil}/></button>
                                            </div>
@@ -127,7 +142,9 @@ export default function Home () {
                                            <p className="card__desc">{item.desc}</p>
                                            <div className="card__action">
                                                 <DropDown  setTaskID = {setTaskID} taskID ={item.id}  status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
-                                                <button className="card__Btn"  onClick={() => handleDeleteTask(item.id)} ><FontAwesomeIcon  icon={faTrash} color ="red"/></button>
+                                            
+                                                <button className="card__Btn" onClick={( )=> {handleDeleteAlert(item.id);}} >
+                                                <FontAwesomeIcon  icon={faTrash} color ="red"/></button>
                                                 <button className="card__Btn"><FontAwesomeIcon  icon={faPencil}/></button>
                                            </div>
                                    </li>
@@ -159,7 +176,9 @@ export default function Home () {
                                            <p className="card__desc">{item.desc}</p>
                                            <div className="card__action">
                                                 <DropDown  setTaskID = {setTaskID} taskID ={item.id}  status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
-                                                <button className="card__Btn"  onClick={() => handleDeleteTask(item.id)}><FontAwesomeIcon  icon={faTrash} color ="red"/></button>
+                                              
+                                                <button className="card__Btn" onClick={( )=> {handleDeleteAlert(item.id);}} >
+                                                <FontAwesomeIcon  icon={faTrash} color ="red"/></button>
                                                 <button className="card__Btn"><FontAwesomeIcon  icon={faPencil}/></button>
                                            </div>
                                    </li>
