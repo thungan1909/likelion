@@ -4,6 +4,7 @@ import TaskForm from "../../component/TaskForm"
 import { Button } from "react-bootstrap-v5";
 import DropDown from "../../component/Dropdown";
 import AlertDelete from "../../component/AlertDelete";
+import TaskFormEditing from "../../component/TaskFormEditing";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPencil, faL } from "@fortawesome/free-solid-svg-icons";
 
@@ -19,6 +20,7 @@ export default function Home () {
     const [taskID, setTaskID] = useState();
     const [isOpenDeleteAlert, setIsOpenDeleteAlert] = useState(false); 
     const [isConfirmDelete, setIsConfirmDelete] = useState(false);
+    const [isEditTask, setIsEditTask] = useState(false);
     function handleCreateTask () 
     {   
          
@@ -30,7 +32,12 @@ export default function Home () {
   
       setTaskID(id);
       setIsOpenDeleteAlert(true);
-  };
+    };
+    function handleEditAlert (id)
+    {
+          setTaskID(id);
+          setIsEditTask(true);
+    }
  
     useEffect(() => {
         //console.log(tasks);
@@ -84,6 +91,7 @@ export default function Home () {
         <div className="page">
             <TaskForm stateOpen={isAddTask} setStateOpen={setIsAskTask}  setTasks={setTasks}></TaskForm>
             <AlertDelete isOpenDeleteAlert = {isOpenDeleteAlert} setIsOpenDeleteAlert = {setIsOpenDeleteAlert} setIsConfirmDelete = {setIsConfirmDelete} ></AlertDelete> 
+            <TaskFormEditing isEditTask = {isEditTask} setIsEditTask = {setIsEditTask} tasks ={tasks} setTasks={setTasks} taskID = {taskID} ></TaskFormEditing>
             <button className="create-task__Btn" onClick={handleCreateTask}>Create Task</button>
             <h1>My list task</h1>
 
@@ -109,7 +117,9 @@ export default function Home () {
  
                                                 <button className="card__Btn" onClick={( )=> {handleDeleteAlert(item.id);}} >
                                                   <FontAwesomeIcon  icon={faTrash} color ="red"/></button>
-                                                <button className="card__Btn"><FontAwesomeIcon  icon={faPencil}/></button>
+                                                <button className="card__Btn" onClick={() => {handleEditAlert(item.id)}}>
+                                                  <FontAwesomeIcon  icon={faPencil}/>
+                                                  </button>
                                            </div>
                                          
                                    </li>
@@ -145,7 +155,9 @@ export default function Home () {
                                             
                                                 <button className="card__Btn" onClick={( )=> {handleDeleteAlert(item.id);}} >
                                                 <FontAwesomeIcon  icon={faTrash} color ="red"/></button>
-                                                <button className="card__Btn"><FontAwesomeIcon  icon={faPencil}/></button>
+                                                <button className="card__Btn" onClick={() => {handleEditAlert(item.id)}}>
+                                                  <FontAwesomeIcon  icon={faPencil}/>
+                                                  </button>
                                            </div>
                                    </li>
                                )
@@ -179,7 +191,9 @@ export default function Home () {
                                               
                                                 <button className="card__Btn" onClick={( )=> {handleDeleteAlert(item.id);}} >
                                                 <FontAwesomeIcon  icon={faTrash} color ="red"/></button>
-                                                <button className="card__Btn"><FontAwesomeIcon  icon={faPencil}/></button>
+                                                <button className="card__Btn" onClick={() => {handleEditAlert(item.id)}}>
+                                                <FontAwesomeIcon  icon={faPencil}/>
+                                                </button>
                                            </div>
                                    </li>
                                )

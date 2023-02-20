@@ -1,9 +1,9 @@
 ul {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 button {
-    padding: 0;
+    padding: 0px;
 }
 .page{
     width: 100vw;
@@ -18,8 +18,8 @@ button {
     height: fit-content;
     
     justify-content: space-between;
-    margin-inline: 24px;
-    padding-inline: 16px;
+    margin-left: 4px;
+    margin-right: 4px;
     
 }
 .create-task__Btn{
@@ -36,6 +36,10 @@ button {
     display: flex;
     flex-direction: column;
     margin-top: 8px;
+
+    display: block;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 .table__title{
     border-bottom:  1px solid #000;
@@ -43,27 +47,30 @@ button {
     background-color: #1e0059;
     color: #FFF;
     padding: 4px;
+    
 }
 
 .table__card{
   
   
-    width: calc(100%-8px);
+    width: 252px;
     min-height: 80px;
-    margin: 8px 4px;
+    margin-bottom: 8px;
     background-color: #FFF;
     border-radius: 8px;
     list-style: none;
-    padding: 8px;
+    display: block;
 }
 
 .card__name{
     width: 100%;
     font-weight: 500;
-    padding-inline: 12px;
+
+    display: block;
 }
 .card__desc{
-    padding-inline: 12px;
+
+    display: block;
 }
 .card__Btn{
     background: none;
