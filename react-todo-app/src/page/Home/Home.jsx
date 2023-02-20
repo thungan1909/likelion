@@ -7,6 +7,7 @@ import AlertDelete from "../../component/AlertDelete";
 import TaskFormEditing from "../../component/TaskFormEditing";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPencil, faL } from "@fortawesome/free-solid-svg-icons";
+import TextField from '@mui/material/TextField';
 
 import './Home.css'
 
@@ -22,12 +23,9 @@ export default function Home () {
     const [isConfirmDelete, setIsConfirmDelete] = useState(false);
     const [isEditTask, setIsEditTask] = useState(false);
     function handleCreateTask () 
-    {   
-         
-          setIsAskTask(true);
-      
+    {    
+          setIsAskTask(true); 
     }
- 
     function handleDeleteAlert (id) {
   
       setTaskID(id);
@@ -40,7 +38,6 @@ export default function Home () {
     }
  
     useEffect(() => {
-        //console.log(tasks);
         const json = JSON.stringify(tasks);
         localStorage.setItem("tasks", json);
       }, [tasks]);
@@ -63,10 +60,7 @@ export default function Home () {
       setTasks(filteredTasks);
       setIsConfirmDelete(false);
     }
-
-
     const handleChangeStatus  = (taskID, updatedStatus) => {
-    
         const updatedTasks = tasks.map((item) => {
             if (item.id === taskID)
              {
@@ -92,7 +86,7 @@ export default function Home () {
             <TaskForm stateOpen={isAddTask} setStateOpen={setIsAskTask}  setTasks={setTasks}></TaskForm>
             <AlertDelete isOpenDeleteAlert = {isOpenDeleteAlert} setIsOpenDeleteAlert = {setIsOpenDeleteAlert} setIsConfirmDelete = {setIsConfirmDelete} ></AlertDelete> 
             <TaskFormEditing isEditTask = {isEditTask} setIsEditTask = {setIsEditTask} tasks ={tasks} setTasks={setTasks} taskID = {taskID} ></TaskFormEditing>
-            <button className="create-task__Btn" onClick={handleCreateTask}>Create Task</button>
+            <Button className="create-task__Btn" onClick={handleCreateTask}>Create Task</Button>
             <h1>My list task</h1>
 
            <div className="table">
@@ -110,7 +104,7 @@ export default function Home () {
                                     return (
                                         <li 
                                            className="table__card" key= {item.id} >
-                                          <span className="card__name">{item.name}</span>
+                                          <p className="card__name">{item.name}</p>
                                            <p className="card__desc">{item.desc}</p>
                                            <div className="card__action">
                                                 <DropDown setTaskID = {setTaskID} taskID ={item.id} status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>

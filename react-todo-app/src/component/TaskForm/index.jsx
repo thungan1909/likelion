@@ -1,5 +1,6 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
 import { useEffect, useState } from "react"
+
 export default function TaskForm ({stateOpen, setStateOpen, setTasks}) 
 {
     
@@ -55,6 +56,8 @@ export default function TaskForm ({stateOpen, setStateOpen, setTasks})
                      <TextField
                         autoFocus
                         margin="dense"
+                        multiline
+                        maxRows={4}
                         onChange={(e) => setNewTaskDesc(e.target.value)}
                         label = "Description"
                         type= "text"

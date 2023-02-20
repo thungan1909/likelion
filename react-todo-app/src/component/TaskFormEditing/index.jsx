@@ -64,6 +64,8 @@ export default function TaskFormEditing ({isEditTask, setIsEditTask, tasks , set
                      <TextField
                         autoFocus
                         margin="dense"
+                        multiline
+                        maxRows={4}
                         defaultValue={taskEditing.desc}
                         onChange={(e) => setNewTaskDesc(e.target.value)}
                         label = "Description"
