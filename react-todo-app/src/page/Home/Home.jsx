@@ -32,14 +32,14 @@ export default function Home () {
       }, [tasks]);
 
     useEffect (() => {
-          console.log(taskID);
-        //  handleChangeStatus(myTaskID, updatedStatus);
+        
+         handleChangeStatus(taskID, updatedStatus);
     }, [updatedStatus])
 
-    const handleChangeStatus  = (myTaskID, updatedStatus) => {
+    const handleChangeStatus  = (taskID, updatedStatus) => {
     
         const updatedTasks = tasks.map((item) => {
-            if (item.id === myTaskID.current)
+            if (item.id === taskID)
              {
               return {
                 id: item.id,
@@ -126,7 +126,7 @@ export default function Home () {
                                           <span className="card__name">{item.name}</span>
                                            <p className="card__desc">{item.desc}</p>
                                            <div className="card__action">
-                                                <DropDown  status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
+                                                <DropDown  setTaskID = {setTaskID} taskID ={item.id}  status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
                                                 <button className="card__Btn"  onClick={() => handleDeleteTask(item.id)} ><FontAwesomeIcon  icon={faTrash} color ="red"/></button>
                                                 <button className="card__Btn"><FontAwesomeIcon  icon={faPencil}/></button>
                                            </div>
@@ -158,7 +158,7 @@ export default function Home () {
                                           <span className="card__name">{item.name}</span>
                                            <p className="card__desc">{item.desc}</p>
                                            <div className="card__action">
-                                                <DropDown  status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
+                                                <DropDown  setTaskID = {setTaskID} taskID ={item.id}  status={item.status} setUpdatedStatus = {setUpdatedStatus}></DropDown>
                                                 <button className="card__Btn"  onClick={() => handleDeleteTask(item.id)}><FontAwesomeIcon  icon={faTrash} color ="red"/></button>
                                                 <button className="card__Btn"><FontAwesomeIcon  icon={faPencil}/></button>
                                            </div>
