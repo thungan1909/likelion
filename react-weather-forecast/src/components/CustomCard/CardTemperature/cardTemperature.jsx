@@ -1,13 +1,12 @@
-export default function CardTemperature ({temperature}) 
+export default function CardTemperature ({temperature, myStyle}) 
 {
+
     return (
       <>
-        <span style={{fontSize: '99px'}}>
+        <span style={myStyle}>
             {temperature}
         </span>
-        <span style={{fontSize: '30px'}}>
-            &deg;C
-        </span>
+        
         </>
     )
     

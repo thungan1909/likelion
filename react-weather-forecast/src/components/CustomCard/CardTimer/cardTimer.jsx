@@ -1,6 +1,8 @@
-export default function CardTimer ({dataTime}) 
+export default function CardTimer ({dataTime, myStyle}) 
 {
+   
+    
     return (
-        <p style={{color: '#eaecf7'}}>{dataTime}</p>
+        <span style={myStyle}>{dataTime}</span>
     )
 }

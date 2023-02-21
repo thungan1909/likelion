@@ -10,7 +10,7 @@ export default function CardCondition ({condition})
                                 }}>
                 </img>
                 <span style={{fontSize: '16px'}}>
-                     Now, it's {condition.text}
+                    {condition.text}
                 </span>
             </div>
     
