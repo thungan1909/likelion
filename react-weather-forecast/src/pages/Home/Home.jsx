@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import SearchBar from '../../components/SearchBar/searchBar';
 import ContentWrapper from '../../components/ContentWrapper/contentWrapper';
+import './home.css'
 export default function Home () 
 {
     const [data, setData] = useState([]);
@@ -44,10 +45,10 @@ export default function Home ()
     if (!isError)
     {
         return (
-            <>
+            <div className='page'>
                  <SearchBar setInputLocation={setInputLocation}></SearchBar>
                 <ContentWrapper data = {data}></ContentWrapper>
-            </>
+            </div>
     
             );  
         
@@ -56,10 +57,10 @@ export default function Home ()
     {
         return (
             
-            <>
+            <div className='page'>
                 <SearchBar setInputLocation={setInputLocation}></SearchBar>
                 <div>Khong</div>
-            </>
+            </div>
         )
     }
     

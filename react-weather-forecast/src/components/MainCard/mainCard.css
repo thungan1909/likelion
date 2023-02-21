@@ -1,0 +1,11 @@
+.card-Wrapper{
+    min-width: 300px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #6364da;
+    color: #eaecf7;
+   margin: 16px;
+ 
+}

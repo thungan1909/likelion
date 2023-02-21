@@ -1,5 +1,6 @@
 
 import MainCard from '../../components/MainCard/maincard';
+import { Space, Card } from 'antd';
 
 export default function ContentWrapper ({data})
 {
@@ -9,9 +10,15 @@ export default function ContentWrapper ({data})
             <>
               {data.length === 0 ? (
                     <div>
-                        <h3>No presentations!</h3>
+                        <h3>No data!</h3>
                     </div>) 
-                    : (<MainCard data= {data}/>)
+                    : (
+                        <Space direction="horizontal"  size={[0, 48]}>
+                            <Card style={{backgroundColor: '#f6faff', margin: '16px'}}>
+                               <MainCard data={data}></MainCard>
+                            </Card>
+                        </Space>
+                    )
                 } 
         </>
         )

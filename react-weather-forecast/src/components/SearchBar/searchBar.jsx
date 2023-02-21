@@ -15,11 +15,8 @@ export default function SearchBar ({setInputLocation})
       
     }
     return (
-        <Space direction="vertical">
-        <Search placeholder="input search text" size="large" onSearch={onSearch} enterButton />
-
+        
+             <Search placeholder="input search text" style={{width: '400px', height: '50px', margin: '16px'}} onSearch={onSearch} enterButton />   
     
-       
-      </Space>
     )
 }
