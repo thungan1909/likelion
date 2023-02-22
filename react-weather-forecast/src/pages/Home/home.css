@@ -3,7 +3,12 @@
     background-color: #9295e4;
     min-width: 100vw;
     min-height: 100vh;
-    height: max-content;
+
+    /* overflow: hidden; */
+  
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
 }

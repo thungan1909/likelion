@@ -2,8 +2,10 @@ import CardTimer from "../../../CustomCard/CardTimer/cardTimer";
 import CardCondition from "../../../CustomCard/CardCondition/cardCondition";
 import './aDay.css'
 import CardTemperature from "../../../CustomCard/CardTemperature/cardTemperature";
+import CardDetail from "../../../CustomCard/CardDetail/cardDetail";
 export default function ADay({forecastday}) 
 {
+  
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     const d = new Date(forecastday.date)
     let formatedDayInWeek = weekday[d.getUTCDay()] ;
@@ -12,7 +14,7 @@ export default function ADay({forecastday})
    
 
     return (
-       <div className="aDay">
+       <div className="aDay" style={{color: '#181e4a'}}>
          <CardTimer dataTime={formatedDayInWeek} myStyle = {{fontSize: '40px'} }></CardTimer>
          <CardTimer dataTime={forecastday.date} myStyle={{fontSize: '16px'}}></CardTimer>
          <CardCondition condition={forecastday.day.condition}></CardCondition>

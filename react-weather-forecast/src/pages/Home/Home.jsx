@@ -16,7 +16,9 @@ export default function Home ()
         handleGetDataFromApi(inputLocation);
     }, [inputLocation])
 
-  
+    // useEffect(() => {
+    //     document.body.style.overflow = "hidden";
+    //   }, []);
  
 
     const handleGetDataFromApi = (inputLocation) => {

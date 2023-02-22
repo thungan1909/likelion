@@ -6,10 +6,10 @@ export default function CardCondition ({condition})
 
                 <img src={condition.icon} 
                     style = {{  
-                                width: '150px', 
+                                width: '100px', 
                                 }}>
                 </img>
-                <span style={{fontSize: '16px'}}>
+                <span style={{fontSize: '16px', textTransform: 'uppercase'}}>
                     {condition.text}
                 </span>
             </div>
