@@ -1,0 +1,10 @@
+.cardByHour{
+    background-color: #FFF;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    border-radius: 16px;
+}

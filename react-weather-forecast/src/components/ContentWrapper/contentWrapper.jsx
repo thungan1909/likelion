@@ -15,7 +15,7 @@ export default function ContentWrapper ({data})
                     </div>) 
                     : (
                        
-                            <Space direction="horizontal" style={{backgroundColor: '#f6faff', marginBottom: '16px'}}>
+                            <Space direction="horizontal" style={{backgroundColor: '#f6faff', marginBottom: '16px', borderRadius: '16px'}}>
                                <MainCard data={data}></MainCard>
                                <NextDayCard data={data}></NextDayCard>
                             </Space>
