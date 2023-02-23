@@ -2,6 +2,7 @@
 import MainCard from './MainCard/maincard'
 import { Space, Card } from 'antd';
 import NextDayCard from './NextDayCard/nextDayCard';
+import LoadingCard from '../LoadingCard/loadingCard';
 
 export default function ContentWrapper ({data})
 {
@@ -11,7 +12,7 @@ export default function ContentWrapper ({data})
             <>
               {data.length === 0 ? (
                     <div>
-                        <h3>No data!</h3>
+                        <LoadingCard></LoadingCard>
                     </div>) 
                     : (
                        

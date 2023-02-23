@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import SearchBar from '../../components/SearchBar/searchBar';
 import ContentWrapper from '../../components/ContentWrapper/contentWrapper';
 import './home.css'
+import NotFoundCard from '../../components/NotFoundCard/notFoundCard';
 export default function Home () 
 {
     const [data, setData] = useState([]);
@@ -61,7 +62,7 @@ export default function Home ()
             
             <div className='page'>
                 <SearchBar setInputLocation={setInputLocation}></SearchBar>
-                <div>Khong</div>
+                <NotFoundCard></NotFoundCard>
             </div>
         )
     }

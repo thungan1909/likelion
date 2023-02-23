@@ -13,7 +13,7 @@ export default function ByTimeCard({forecastByHour, icon})
         <Space direction="horizontal">
                 <div className='cardByHour'>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                        <img src={icon} style = {{width: '32px'}}></img>
+                        <img src={icon} style = {{width: '32px', marginBottom: '8px'}}></img>
                         <CardTimer dataTime={dataTimeInHour.getHours() + ":00"}></CardTimer>
                         
                        
