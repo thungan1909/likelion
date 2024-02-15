@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Varela Round', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* For all */
+html, body {
+    overflow-x: hidden;
+    background-color: #dde3e8
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.fontBold{
+    color: #9a9b9c;
+    font-weight: bold;
+}
+.fontThin {
+    color: #000;
+    font-weight: lighter ;
+}
+#page {
+    width: 100%;
+    height: 100%;  
+}
+/* 
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Tổng quan đến chi tiết
+*/
+
+/* BEGIN: BANNER */
+#banner{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    margin: 24px;
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+}
+
+/* BEGIN: INPUT */
+
+#inputForm{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    color: inherit;
+}
+
+
+.location__Input{
+    width: min-content;
+    height: 32px;
+    text-align: center;
+    border: none;
+  
+    background: rgba(0, 0, 0, 0);
+    transition: ease-in-out, width .35s ease-in-out;
+    color: inherit;
+    font-weight: bold;
+}
+
+.location__Input::placeholder{
+    color: inherit;
+}
+
+.location__Input:focus{
+   
+   border-color: #58a6ff;
+   outline: none;
+}
+/* END: INPUT */
+
+.weather__current{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.weather__info{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+
+
+.weather__temperature{
+    font-size: 84px;
+    color: inherit;
+    margin-inline: 16px;
+}
+.temp__icon{
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    transform: translateX(50%);
+}
+.changeDeg{
+    display: flex;
+    flex-direction: row; 
+}
+
+.deg__Btn{
+    padding: 4px;
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+}
+.deg__Btn--seperate{
+  
+    padding-right: .8rem;
+    margin-right: 0;
+    height: 16px;
+    transform: translateY(50%);
+}
+.location__name{
+    font-size: 32px;
+}
+.location__time{
+    font-size: 16px;
+}
+.condition__icon--img{
+    width: 96px;
+    height: 96px; 
+    margin-inline: 16px;
+}
+.weather__detail{
+    display: flex;
+    flex-direction: row;   
+    align-items: end;
+    margin-bottom:  16px;
+}
+
+.detail__info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    margin-left: 4px;
+}
+.detail__title{
+    font-weight: bold;
+}
+.detail__info--seperate{
+    border-right: 1px solid;
+    border-color: inherit;
+    padding-right: .8rem;
+    margin-right: 0;
+}
+
+/* END: BANNER */
+#container{
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0px 24px 0px 24px;
+}
+/* BEGIN: NEXTDAY CARD */
+.dayCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 12px;
+    width: 250px;
+    height: 100px;
+    border-radius: 16px;
+    background-color: #FFF;
+}
+
+.card__temperature{
+
+    font-size: 24px;
+}
+.card__time{
+    font-size: 16px;
+}
+
+.card__icon {
+    width: 48px;
+    height: 48px;
+}
+
+.card__condition{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 4px;
+    border-radius: 16px;
+    font-size: 16px;
+    background-color: #5f7ead;
+   
+}
+.card__info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-inline: 16px;
+}
+.cardTitle{
+    font-size: 28px;
+    font-weight: normal;
+}
+/* END: NEXTDAY CARD */
+/* BEGIN: CHART */
+#chart{
+    width: calc(100% - 286px) ;
+}
+
+
+
+/* BEGIN: TOAST */
+#toast{
+    position: fixed;
+    bottom: 0;
+    right: 32px;
+    margin-bottom: 8px;
+    z-index: 9999;
+}
+.toastWrapper {
+    width: 360px;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    border-radius: 2px;
+    padding: 20px 0px;
+    border-left: 8px solid #ff623d;
+    box-shadow: 0 5px 8px rgb(0,0,0,0.08);
+    transform: all linear .3s;
+    background-color: #FFF;
+    
+}
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+      
+    }
+}
+.toast__icon{
+    font-size: 24px;
+    padding: 8px;
+    color: #ff623d;
+}
+.toast__body{
+    /* để khi content ngắn thì nút close vẫn không bị đẩy vào trong */
+    flex-grow: 1;
+}
+.toast__title{
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff623d
+}
+.toast__msg{
+
+    padding: 4px;
+    margin-top: 6px;
+    margin-right: 8px;
+    line-height: 1.5;
+    font-size: 14px;
+    color: #888;
+}
+.toast__location{
+    font-weight: bold;
+}
+.toast__close{
+    font-size: 20px;
+    padding: 16px;
+    color: rgb(0,0,0,0.3);
+    cursor: pointer;
+}
+
+/* END: TOAST */

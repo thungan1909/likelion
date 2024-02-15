@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <!-- FONTAWESOME -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+   integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+    <!-- CHART -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <title>Weather Forecast</title>
+</head>
+<html>
+<body>
+    <div id="page">   
+        <!-- BANNER -->
+        <div id="banner">
+            
+            <div class="flex-column my-4 ">
+                <form id="inputForm" name="inputForm">
+                    <span class="p-1 input__text"></span>
+                    <input type="text"  class="location__Input">
+                    <span class="current__status"> </span>
+                </form>
+                <div class="weather__current">
+                    <div class="weather__info">
+                        <div class="position-relative">
+                            <span class="weather__temperature "></span>
+                            <span class="temp__icon"></span>
+                        </div>
+                        
+                       
+                        <div class="condition__icon">
+                        </div>              
+                    </div>
+                    <div class="changeDeg">
+                        <button class="deg__Btn degC__Btn">
+                           
+                        </button>
+                        <span class="deg__Btn--seperate"></span>
+                        <button class="deg__Btn degF__Btn">
+                          
+                        </button>
+                    </div>
+                    <span class="location__name"></span>  
+                    <span class="location___time"></span>
+                </div>
+            </div>
+            <div class="weather__detail"> </div>
+        </div>
+        <!-- CONTAINER-->
+        <div id="container">
+            <div class="nextdaysWrapper">
+
+            </div>
+            <div id="chart">
+                
+            </div>
+        </div>
+        <!-- TOAST -->
+        <div id="toast">
+    
+        </div>
+    
+        
+    </div>
+  
+    <script src="./script.js"></script>
+</body>
+</html>

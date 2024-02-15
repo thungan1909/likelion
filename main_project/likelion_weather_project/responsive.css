@@ -1,0 +1,59 @@
+/* PC */
+/* @media (min-width : 1024px) */
+@media (min-width : 64px)
+{
+
+}
+
+
+/* Tablet */
+/* @media (min-width: 740px) and (max-width : 1023px) */
+@media (min-width: 46.25em) and (max-width : 63.9375em)
+{
+
+}
+
+/* Mobile */
+/* @media (max-width : 739px) */
+@media (max-width : 46.1875em)
+{  
+    #banner{
+        max-height: 100%;
+    }
+    #inputForm{
+        flex-direction: column;
+        align-items: center;
+        margin-block: 16px;
+    }
+    .weather__detail{
+        display: grid;
+        grid-template-areas: 
+            " a b"
+            "c d";
+    }
+    .detail__info{
+        margin-block: 8px;
+    }
+    .detail__info--seperate{
+        border-right: none;
+    }
+    #container{
+        flex-direction: column;
+        align-items: center;
+       
+        width: calc(100% - 48px);
+    }
+    .nextdaysWrapper,.dayCard{
+       width: 100%;
+    }
+    .card__condition{
+        width: calc(2/3 * 100%);
+    }
+    .cardTitle{
+        display: block;
+        text-align: center;
+    }
+    #chart{
+        width: 100%;
+    }
+}
