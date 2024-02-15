@@ -1,0 +1,344 @@
+ @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+ 
+ /* Reset CSS */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+ }
+
+ :root {
+    --f-size: 15px;
+    --p-816: 8px 16px;
+ }
+ body,
+ html {
+    font-family: 'Jost', sans-serif;
+    font-size: var(--f-size);
+ }
+
+
+
+ /* CUSTOM */
+
+.Container{
+   padding: 8px 16px;
+}
+
+h3 {
+   font-family: "Segoe UI", Arial,sans-serif;
+   font-weight: 400;
+   margin: 10px 0;
+}
+
+/* 1. Vị trí
+2. Kích thước (Width, height)
+3. Màu sắc
+4. Hình dáng (Kiểu chữ,  */
+
+
+ /* BEGIN: NAVBAR */
+ #navbar{
+   
+   position: fixed;    /* Để cố định navbar khi kéo xuống */
+   display: flex;
+   flex-direction: row;
+   z-index: 2; 
+   padding: var(--p-816);
+   width: 100%;
+   background-color: #fff;
+   color: #000;
+   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+   justify-content: space-between;
+   align-items: center; 
+   letter-spacing: 4px;  /* Space of letter */
+   cursor: pointer;
+ }
+ #navbar .logo{
+    padding: var(--p-816);
+ }
+ #navbar .logo:hover, #navbar .nav-items li:hover{
+    color: #000;
+    background-color: #ccc;
+ }
+
+ #navbar .nav-items{
+    display: flex;
+ }
+ #navbar .nav-items li {
+   padding: var(--p-816);
+ }
+
+ #navbar .nav-items li a {
+  
+   color: #000;
+ }
+
+ #navbar .nav-items li a:visited {
+   color: #000;
+ }
+ /* END: NAVBAR */
+
+
+  /* BEGIN: HERO */
+
+#hero{
+    position: relative;
+  }
+
+#hero .hero__img{
+   width: 100%;
+   /* width: calc(100% - 20px); 
+   margin-inline: 10px;   margin điểm đầu và điểm cuối */
+  }
+
+#hero h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 36px;
+    letter-spacing: 4px;
+    font-weight: 400;
+    margin-top: 16px;
+}
+#hero h2 b{
+    background-color: #000;
+    opacity: 0.75;
+    padding: var(--p-816);
+}
+/* END: HERO */
+
+/* BEGIN: CONTENT */
+
+.Contents__TitleWrapper{
+   padding: 32px 16px;
+}
+.Contents__title {
+      margin: 10px 0px;
+      padding: 16px 0px;
+      font-size: 24px;
+}
+
+.Contents__line{
+   opacity: 0.6;
+}
+
+.Contents__Description{
+   margin: 15px 0px;
+}
+
+
+/* BEGIN: PROJECTS */
+
+#Projects .Projects__cards{
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0px 8px;
+   justify-content: space-between;
+   gap: 1rem; 
+   margin: 0px 8px;
+}
+#Projects .Projects__cards li{
+   position: relative;
+   width: calc(100% / 4 - 1rem) ;   /* Tru di khoang gap */
+}
+
+#Projects .Projects__cards li img{
+   width: 100%;
+   height: 100%;
+}
+#Projects .Projects__cards li span{
+   position: absolute;
+   left: 0;
+   top: 0;
+   background-color: #000;
+   color: #fff;
+   padding: 8px 16px;
+   font-size: var(--f-size);
+   text-transform: capitalize;     /* Uppercase the first letters */
+}
+
+/* END: PROJECTS */
+
+/* BEGIN: ABOUT */
+
+.About__Cards{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 1rem;
+}
+
+.About__Card{
+   display: flex;
+   flex-direction: column;
+   width: calc(100% / 4 - 1rem)  ;
+   padding: 0px 8px;
+   margin-bottom: 16px;
+}
+
+.About__contents{
+   padding: 0px 8px;
+}
+
+.Card__Img {
+   width: 100%;
+}
+
+.Card__Name{
+   margin: 10px 0px;
+   font-size: 24px;
+   display: block;
+}
+
+.Card__Role {
+   margin: 15px 0px;
+   opacity: 0.6;
+   display: block;
+}
+
+.Card__Desc{
+   margin: 15px 0px;
+}
+
+.Card__Btn{
+   padding: var(--p-816);
+   font-family: inherit;
+   font-size: 15px;
+   color: #000;
+   background-color: #f1f1f1;
+   text-decoration: none;
+   text-transform: none;
+   border: none;
+   cursor: pointer;
+   transition: all .25s linear;
+}
+
+.Card__Btn:hover{
+   background-color: #ccc;
+}
+
+/*END: ABOUT */
+
+/* BEGIN : CONTACT */
+
+.form__contact input {
+   padding: 8px;
+   width: 100%;
+   display: block;
+   border: 1px solid #ccc;
+   font-size: var(--f-size);
+   cursor: text;
+}
+
+/* Another way: 
+#contact .form-contact input:not(:first-child) {
+    margin-block: 16px;
+    padding-block: 8px;
+}
+ */
+.form__email, .form__subject, .form__comment {
+   margin: 16px 0px;
+}
+.form__btn{
+   padding: var(--p-816);
+   margin: 16px 0px;
+   background-color: #000;
+   color: #FFF;
+   text-transform: uppercase;
+   font-family: initial;
+   font-size: var(--f-size);
+   border: none;
+   display: inline-block;
+   vertical-align: middle;
+   overflow: hidden;
+   text-decoration: none;
+   text-align: center;
+   cursor: pointer;
+   width: fit-content;
+   transition: all .25s linear;
+}
+
+.form__btn:hover{
+   border: 1px solid #ccc;
+   background-color: #ccc;
+   color: #000;
+}
+/* BEGIN: MAP */
+
+.map__wrapper {
+   padding: 0.01em 16px;
+}
+
+#map img{
+   max-width: 100%;
+   height: auto;
+   vertical-align: middle;
+}
+
+/* BEGIN: FOOTER */
+#footer{
+   padding: 16px 0px;    /*Hoac padding -block: 16px */
+   background-color: #000;
+   text-align: center;
+}
+
+#footer .footer__content{
+   color: #FFF;
+   font-size: var(--f-size);
+   margin: 15px 0px;
+}
+#footer .footer__content a{
+   color: inherit;
+   font-size: var(--f-size);
+}
+#footer .footer__content a:hover{
+   color: greenyellow;
+}
+
+
+/* MEDIA QUERY */
+
+
+/* Tablet */
+
+@media screen and (max-width: 992px) {
+   
+   #Projects .Projects__cards li {
+      width: calc(100% / 2 - 1rem) ;
+   }
+
+   .About__Card {
+      width: calc(100% / 2 - 1rem) ;
+   }
+}
+/* Mobile */
+
+@media screen and (max-width: 600px) {
+ 
+   /* Project card */
+   #Projects .Projects__cards li {
+      width: 100% ;
+   }
+
+   /* About card */
+   .About__Card {
+      width: 100% ;
+   }
+
+   #navbar .nav-items{
+         /* opacity: 0%; */
+         /* visibility: hidden; */
+        display: none;     /*Use when we don't want to use this item in other place */
+   }
+
+   #hero h2 span {
+      display: none;
+   }
+
+   
+}
