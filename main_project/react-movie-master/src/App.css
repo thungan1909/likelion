@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400&display=swap');
+
+:root{
+  /* --primary-color: #EE4D2D;
+  --primary-color-rgba: rgb(238, 77, 45); */
+  --white-color: #FFF;
+  --black-color: #000;
+  --text-color: #333;
+  --dark-blue-color: rgb(3,37,65);
+  --dark-mode-color:#18191a;
+}
+html, body {
+  width: 100%;
+  min-height: 100%;
+  /* width: 100vw;
+  min-height: 100vh; */
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: var(--dark-mode-color);
+  color: var(--white-color);
+}

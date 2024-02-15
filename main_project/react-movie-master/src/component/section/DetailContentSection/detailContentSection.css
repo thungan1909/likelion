@@ -1,0 +1,49 @@
+.detailContent{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.film-detail__statistic{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 90px;
+    display: flex;
+    color: inherit;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 16px 0px; */
+    background-color: rgb(245, 168, 34, 0.1);
+ 
+    border-top-left-radius: 36px;
+    border-bottom-left-radius: 36px;
+}
+
+
+.film-detail__statistic-point{
+    margin-right: 16px;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.film-detail__statistic-rating{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+}
+.film-detail__descripton{
+    margin: 16px 0px;
+}
+.production-companies{
+    display: flex;
+    margin-top: 4px;
+}
+.production-companies--img{
+    width: 70px;
+    height: auto;
+}

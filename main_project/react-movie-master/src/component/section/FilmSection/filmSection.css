@@ -1,0 +1,38 @@
+  .film-card-section {
+    color: inherit;
+    position: relative;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  
+  .film-card__header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .film-card__title {
+    margin: 0px 20px 0px 0px;
+  }
+ 
+  
+  .film-card__list-wrapper {
+    width: 100%;
+  }
+  
+  .film-card__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  
+  .film-card__list::-webkit-scrollbar {
+    background-color: #fff;
+    height: 8px;
+  }
+  
+  .film-card__list::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
+    border-radius: 2rem;
+  }

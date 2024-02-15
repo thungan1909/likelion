@@ -1,0 +1,26 @@
+.film-card__horizontal-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.horizontal-card__item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: 200px;
+  height: 200px;
+  border-radius: 2px;
+}
+
+.horizontal-card__item-img {
+  width: 200px;
+  height: 115px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px;
+  /* background-position: 50% 50%;
+
+   overflow: hidden; */
+}
