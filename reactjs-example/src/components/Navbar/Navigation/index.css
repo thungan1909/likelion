@@ -1,8 +1,0 @@
-#navigation{
-    display: flex;
-    list-style: none;
-    flex-direction: row;
-}
-#navigation li {
-    margin: 8px;
-}
